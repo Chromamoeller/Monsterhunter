@@ -44,8 +44,6 @@ def sort_monster():
            large_monsters.append(i)
 
 
-
-
    number = 1
    for i in small_monsters:
        print(f"{number}  {i['name']} es ist {i['type']}")
@@ -55,10 +53,6 @@ def sort_monster():
    for i in large_monsters:
        print(f"{number}  {i['name']} es ist {i['type']}")
        number +=1
-
-
-
-
 
 
 sort_monster()
