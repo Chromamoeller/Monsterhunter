@@ -11,7 +11,7 @@ current_monster_to_fight_name_text = ""
 current_monster_to_fight_type_text = ""
 current_monster_to_fight_weaknesses_text = ""
 
-
+print("Hello World")
 
 # Wird durch Button "kleines Monster" aufgerufen. Displayed random ein monster aus der Liste von kleinen Monster
 def display_current_small_monster():
