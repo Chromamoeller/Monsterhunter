@@ -11,7 +11,6 @@ current_monster_to_fight_name_text = ""
 current_monster_to_fight_type_text = ""
 current_monster_to_fight_weaknesses_text = ""
 
-print("Hello World")
 
 # Wird durch Button "kleines Monster" aufgerufen. Displayed random ein monster aus der Liste von kleinen Monster
 def display_current_small_monster():
@@ -59,14 +58,16 @@ current_monster_to_fight_size_lable.place(x=600, y=50)
 current_monster_to_fight_weaknesses_lable = tkinter.Label(root, text=current_monster_to_fight_weaknesses_text)
 current_monster_to_fight_weaknesses_lable.place(x=600, y=90)
 
+
 # Findet für jedes monster seine Schwäche und wie groß die Schwäche ist und schreibt sie in die Console
 def show_weakness(monster):
     list_of_weaknesses_and_stars = []
     for weakness in monster['weaknesses']:
-        #print(weakness['element'], weakness['stars'])
+        # print(weakness['element'], weakness['stars'])
         list_of_weaknesses_and_stars.append(weakness['element'])
         list_of_weaknesses_and_stars.append(weakness['stars'])
     print(monster['name'], "Schwäche", list_of_weaknesses_and_stars)
+
 
 # Erstellt für jedes Monster eigene Hp-Werte abhängig von größe des Monsters
 def generate_hp_for_monster(monster):
@@ -74,7 +75,6 @@ def generate_hp_for_monster(monster):
         print("Es bekommt 100 Hp")
     elif monster['type'] == 'large':
         print("Es bekommt 300 Hp")
-
 
 
 root.mainloop()
