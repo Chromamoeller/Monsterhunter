@@ -44,17 +44,19 @@ def display_current_large_monster():
 
 
 # UI
-transparent_color = "#00000080"
 # player UI
-max_player_health_bar = canvas.create_rectangle(10, 10, player1.max_hp, 30, fill='red', outline='black',stipple="gray50")
+max_player_health_bar = canvas.create_rectangle(10, 10, player1.max_hp, 30, fill='red', outline='black',
+                                                stipple="gray50")
 player_health_bar = canvas.create_rectangle(10, 10, player1.current_hp, 30, fill='red', outline='black')
 
 # Button zum Anzeigen von kleinen Monstern
-create_small_monster = tkinter.Button(root, text="Kleines Monster", command=display_current_small_monster)
+create_small_monster = tkinter.Button(root, text="Kleines Monster", command=display_current_small_monster, width=20,
+                                      height=2)
 create_small_monster.place(x=100, y=455)
 
 # Button zum Anzeigen von großen Monstern
-create_large_monster_btn = tkinter.Button(root, text="Großes Monster", command=display_current_large_monster)
+create_large_monster_btn = tkinter.Button(root, text="Großes Monster", command=display_current_large_monster, width=20,
+                                          height=2)
 create_large_monster_btn.place(x=300, y=455)
 
 # Zeigt den Namenstext eines aktuellen Monsters an, welches durch die beiden Buttons erstellt wurde.
