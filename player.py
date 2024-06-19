@@ -1,6 +1,4 @@
-
-
-class player:
+class Player:
     def __init__(self, name, current_hp, max_hp, current_weapon, inventar):
         self.name = name
         self.current_hp = current_hp

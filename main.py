@@ -1,10 +1,15 @@
 from handle_data import small_monsters, large_monsters
 import tkinter
 import random
+from player import Player
+
+player1 = Player('', 150, 150, 'Sword and Shield', [])
 
 # Setup für die UI
 root = tkinter.Tk()
-root.geometry("800x800")
+root.geometry("900x900")
+canvas = tkinter.Canvas(root, width=900, height=450, bg='lightblue')
+canvas.pack()
 small_monster_text = ""
 large_monster_text = ""
 current_monster_to_fight_name_text = ""
@@ -38,24 +43,33 @@ def display_current_large_monster():
     generate_hp_for_monster(large_monsters[random_number])
 
 
+# UI
+transparent_color = "#00000080"
+# player UI
+max_player_health_bar = canvas.create_rectangle(10, 10, player1.max_hp, 30, fill='red', outline='black',stipple="gray50")
+player_health_bar = canvas.create_rectangle(10, 10, player1.current_hp, 30, fill='red', outline='black')
+
 # Button zum Anzeigen von kleinen Monstern
 create_small_monster = tkinter.Button(root, text="Kleines Monster", command=display_current_small_monster)
-create_small_monster.pack()
+create_small_monster.place(x=100, y=455)
 
 # Button zum Anzeigen von großen Monstern
 create_large_monster_btn = tkinter.Button(root, text="Großes Monster", command=display_current_large_monster)
-create_large_monster_btn.pack()
+create_large_monster_btn.place(x=300, y=455)
 
 # Zeigt den Namenstext eines aktuellen Monsters an, welches durch die beiden Buttons erstellt wurde.
-current_monster_to_fight_name_labe = tkinter.Label(root, text=current_monster_to_fight_name_text)
+current_monster_to_fight_name_labe = tkinter.Label(root, text=current_monster_to_fight_name_text, bg='black',
+                                                   fg='white')
 current_monster_to_fight_name_labe.place(x=600, y=10)
 
 # Zeigt den Größentext eines aktuellen Monsters an, welches durch die beiden Buttons erstellt wurde.
-current_monster_to_fight_size_lable = tkinter.Label(root, text=current_monster_to_fight_type_text)
+current_monster_to_fight_size_lable = tkinter.Label(root, text=current_monster_to_fight_type_text, bg='black',
+                                                    fg='white')
 current_monster_to_fight_size_lable.place(x=600, y=50)
 
 # Zeigt den Schwächetext eines aktuellen Monsters an, welches durch die beiden Buttons erstellt wurde.
-current_monster_to_fight_weaknesses_lable = tkinter.Label(root, text=current_monster_to_fight_weaknesses_text)
+current_monster_to_fight_weaknesses_lable = tkinter.Label(root, text=current_monster_to_fight_weaknesses_text,
+                                                          bg='black', fg='white')
 current_monster_to_fight_weaknesses_lable.place(x=600, y=90)
 
 
